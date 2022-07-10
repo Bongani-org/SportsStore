@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<!-- CSIS3734 (2021): New for Assignment 2 -->
+<!-- LB. Mabizela (2016074458)-->
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" asp-href-include="/lib/bootstrap/css/bootstrap.min.css" />
+
+    <!-- Font awesome  -->
+    <link asp-href-include="lib/font-awesome/css/all.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" asp-href-include="/styles/custom.css" />
+
+    <title>@ViewData["Title"] - Sports Store</title>
+    
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <div class="navbar navbar-expand-md bg-dark navbar-dark">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand" href="#">SPORTS STORE</a>
+            <div><vc:cart-summary /></div>
+
+            <!-- Toggler/collapsible Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#MyNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="MyNavbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Admin</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" asp-page="/Orders">Orders</a>
+                            <a class="dropdown-item" asp-controller="Admin" asp-action="Index">Products</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row m-1 p-1">
+            <div id="categories" class="col-3">
+                <vc:navigation-menu />
+            </div>
+            <div class="col-9">
+                @RenderBody()
+            </div>
+        </div>
+        <div class="text-sm-center mt-2 border-top border-dark">
+            <!-- Replace with your own details -->
+            CSIS3734 (2021) - LB. Mabizela (2016074458)
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script asp-src-include="/lib/jquery/jquery.slim.min.js"></script>
+    <script asp-src-include="/lib/popper.js/popper.min.js"></script>
+    <script asp-src-include="/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script asp-src-include="lib/jquery/jquery.min.js"></script>
+    <script asp-src-include="lib/jquery-validate/jquery.validate.min.js"></script>
+    <script asp-src-include="lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>
+
